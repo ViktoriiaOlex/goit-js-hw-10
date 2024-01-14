@@ -1,0 +1,1 @@
+{"version":3,"file":"2-snackbar-be26db77.js","sources":["../../src/js/2-snackbar.js"],"sourcesContent":["`✅ Fulfilled promise in ${delay}ms`;\n`❌ Rejected promise in ${delay}ms`;"],"names":[],"mappings":"AAA0B,WACD"}
