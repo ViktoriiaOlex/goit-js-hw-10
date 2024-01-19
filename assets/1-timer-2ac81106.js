@@ -1,0 +1,2 @@
+import{f as c,i as a}from"./vendor-651d7991.js";c(selector,l);const l={enableTime:!0,time_24hr:!0,defaultDate:new Date,minuteIncrement:1,onClose(o){console.log(o[0])}};a.error({title:"Error",message:"Please choose a date in the future"});function e(o){const t=Math.floor(o/864e5),n=Math.floor(o%864e5/36e5),s=Math.floor(o%864e5%36e5/6e4),r=Math.floor(o%864e5%36e5%6e4/1e3);return{days:t,hours:n,minutes:s,seconds:r}}console.log(e(2e3));console.log(e(14e4));console.log(e(2414e4));
+//# sourceMappingURL=1-timer-2ac81106.js.map
