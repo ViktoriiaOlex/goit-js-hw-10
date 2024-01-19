@@ -1,4 +1,7 @@
 
+.back-link {
+  text-decoration-line: underline;
+}
 .datetime-input {
   width: 270px;
   height: 25px;
