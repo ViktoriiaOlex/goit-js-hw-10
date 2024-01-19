@@ -1,7 +1,25 @@
-// Описаний в документації
 import flatpickr from "flatpickr";
-// Додатковий імпорт стилів
 import "flatpickr/dist/flatpickr.min.css";
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
+flatpickr(selector, options) 
+
+const options = {
+  enableTime: true,
+  time_24hr: true,
+  defaultDate: new Date(),
+  minuteIncrement: 1,
+  onClose(selectedDates) {
+    console.log(selectedDates[0]);
+  },
+};
+
+iziToast.error({
+  title: 'Error',
+  message: 'Please choose a date in the future',
+});
+
 
 function convertMs(ms) {
     // Number of milliseconds per unit of time
