@@ -3,7 +3,20 @@ import "flatpickr/dist/flatpickr.min.css";
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-flatpickr(selector, options) 
+let userSelectedDate = 0;
+
+const refs = {
+  dateInput: document.querySelector('.datetime-input'),
+  startBtn: document.querySelector('button[data-start]'),
+  timerDays: document.querySelector('span[data-days]'),
+  timerHours: document.querySelector('span[data-hours]'),
+  timerMinutes: document.querySelector('span[data-minutes]'),
+  timerSeconds: document.querySelector('span[data-seconds]'),
+};
+
+refs.startBtn.disabled = true;
+refs.dateInput.disabled = false;
+
 
 const options = {
   enableTime: true,
@@ -11,14 +24,32 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    console.log(selectedDates[0]);
+    if (selectedDates[0].getTime() > Date.now()) {
+      userSelectedDate = selectedDates[0].getTime();
+      refs.startBtn.disabled = false;
+      refs.startBtn.classList.remove('disabled');
+    } else {
+      iziToast.error({
+        title: 'Error',
+        message: 'Please choose a date in the future',
+        position: "topRight",
+        class: 'error-svg',
+        icon: 'error-svg',
+        messageColor: '#fff',
+        messageSize: '16px',
+        backgroundColor: '#EF4040',
+      
+      });
+
+      refs.startBtn.disabled = true;
+      refs.startBtn.classList.add('disabled');
+    }
   },
+
 };
 
-iziToast.error({
-  title: 'Error',
-  message: 'Please choose a date in the future',
-});
+flatpickr('#datetime-picker', options); 
+
 
 
 function convertMs(ms) {
