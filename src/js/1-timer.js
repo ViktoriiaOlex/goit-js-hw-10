@@ -17,7 +17,6 @@ const refs = {
 refs.startBtn.disabled = true;
 refs.dateInput.disabled = false;
 
-
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -40,17 +39,41 @@ const options = {
         backgroundColor: '#EF4040',
       
       });
-
       refs.startBtn.disabled = true;
       refs.startBtn.classList.add('disabled');
     }
   },
-
 };
 
 flatpickr('#datetime-picker', options); 
 
+refs.startBtn.addEventListener('click', element => {
+  const timer = setInterval(() => {
+    const differenceDates = userSelectedDate - Date.now();
+    const timeValue = convertMs(differenceDates);
+    if (differenceDates <= 0) {
+      clearInterval(timer);
+      refs.startBtn.disabled = false;
+      refs.startBtn.classList.remove('disabled');
+      refs.dateInput.disabled = false;
+      refs.dateInput.classList.remove('disabled');
+    } else {
+      refs.timerDays.textContent = addLeadingZero(timeValue.days);
+      refs.timerHours.textContent = addLeadingZero(timeValue.hours);
+      refs.timerMinutes.textContent = addLeadingZero(timeValue.minutes);
+      refs.timerSeconds.textContent = addLeadingZero(timeValue.seconds);
+    }
+  }, 1000);
+  refs.startBtn.disabled = true;
+  refs.startBtn.classList.add('disabled');
+  refs.dateInput.disabled = true;
+  refs.dateInput.classList.add('disabled');
+});
 
+function addLeadingZero(value) {
+  value = String(value);
+  return value.length < 2 ? value.padStart(2, '0') : value;
+}
 
 function convertMs(ms) {
     // Number of milliseconds per unit of time

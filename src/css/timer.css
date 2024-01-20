@@ -6,7 +6,7 @@
   width: 270px;
   height: 25px;
   border-radius: 5px;
-  border: 2px solid #808080;
+  border: 1px solid #808080;
   color: #2e2f42;
   font-size: 15px;
   letter-spacing: 0.04em;
@@ -18,18 +18,16 @@
 
 .datetime-input:hover {
   border-radius: 5px;
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 
 .datetime-input:focus {
   border-radius: 5px;
-  border: 2px solid #4e75ff;
+  border: 1px solid #4e75ff;
 }
 
 .datetime-input.disabled {
-  color: #ffffff;
-  background-color: #b2b2b2;
-  border: 1px solid transparent;
+  background-color:#F5F5F5;
 }
 
 .datetime-input.disabled:hover,
@@ -97,5 +95,4 @@
 
 .error-svg {
   background-image: url(../img/error.svg);
-  
 }
