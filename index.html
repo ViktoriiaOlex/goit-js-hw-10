@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>goit-js-hw-10</title>
     
-    <script type="module" crossorigin src="/goit-js-hw-10/assets/styles-903758a6.js"></script>
+    <script type="module" crossorigin src="/goit-js-hw-10/assets/styles-2eb7ef6e.js"></script>
     <script type="module" crossorigin src="/goit-js-hw-10/assets/vendor-651d7991.js"></script>
     <script type="module" crossorigin src="/goit-js-hw-10/assets/1-timer-55ba8e62.js"></script>
     <script type="module" crossorigin src="/goit-js-hw-10/assets/2-snackbar-e8379547.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-9afb9213.css">
+    <link rel="stylesheet" href="/goit-js-hw-10/assets/styles-d8587fe4.css">
     <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-80d0dc0f.css">
   </head>
   <body>
@@ -77,22 +77,34 @@
     <form class="form">
       <label>
         Delay (ms)
-        <input type="number" name="delay" required />
+        <input class="input-delay" type="number" name="delay" required />
       </label>
 
-      <fieldset>
+      <fieldset class="state-form">
         <legend>State</legend>
         <label>
-          <input type="radio" name="state" value="fulfilled" required />
+          <input
+            class="radio-input"
+            type="radio"
+            name="state"
+            value="fulfilled"
+            required
+          />
           Fulfilled
         </label>
         <label>
-          <input type="radio" name="state" value="rejected" required />
+          <input
+            class="radio-input"
+            type="radio"
+            name="state"
+            value="rejected"
+            required
+          />
           Rejected
         </label>
       </fieldset>
 
-      <button type="submit">Create notification</button>
+      <button class="form-button" type="submit">Create notification</button>
     </form>
     <script type="module" src="./js/2-snackbar.js"></script>
   </body>
